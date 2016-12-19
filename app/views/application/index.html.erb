@@ -1,1 +1,76 @@
-hey man this is root
+<h3>Makeup</h3><hr>
+<div class="row">
+  <% @makeup_albums.each do |album| %>
+    <div class="col-xs-4 col-md-2">
+      <%= link_to album do %>
+        <div class="album panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <%= album.name %>
+            </h3>
+          </div>
+          <div class="panel-body image-cover">
+            <%= image_tag album.cover %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<h3>OOTD</h3><hr>
+<div class="row">
+  <% @ootd_albums.each do |album| %>
+    <div class="col-xs-4 col-md-2">
+      <%= link_to album do %>
+        <div class="album panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <%= album.name %>
+            </h3>
+          </div>
+          <div class="panel-body image-cover">
+            <%= image_tag album.cover %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<h3>Hair</h3><hr>
+<div class="row">
+  <% @hair_albums.each do |album| %>
+    <div class="col-xs-4 col-md-2">
+      <%= link_to album do %>
+        <div class="album panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <%= album.name %>
+            </h3>
+          </div>
+          <div class="panel-body image-cover">
+            <%= image_tag album.cover %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<h3>Complete Lookbook</h3><hr>
+<div class="row">
+  <% @lookbook_albums.each do |album| %>
+    <div class="col-xs-4 col-md-2">
+      <%= link_to album do %>
+        <div class="album panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <%= album.name %>
+            </h3>
+          </div>
+          <div class="panel-body image-cover">
+            <%= image_tag album.cover %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

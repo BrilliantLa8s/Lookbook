@@ -1,3 +1,7 @@
+album_types = ["makeup", "ootd", "hair", "complete_lookbook"]
+album_types.each do |name|
+  AlbumType.find_or_create_by(name: name)
+end
 
 if Rails.env.development?
   # Dummy users
@@ -9,6 +13,33 @@ if Rails.env.development?
       u.password = 'password'
       u.password_confirmation = 'password'
     end
+  end
+  5.times do |index|
+    id = index + 1
+    Album.find_or_create_by(
+      user_id: 1,
+      name: "Makeup Album #{id}",
+      album_type_id: AlbumType.find_by(name: "makeup").id,
+      cover: "https://s-media-cache-ak0.pinimg.com/736x/b4/cf/b9/b4cfb9021908d14e0916748787bf65e0.jpg"
+    )
+    Album.find_or_create_by(
+      user_id: 1,
+      name: "OOTD Album #{id}",
+      album_type_id: AlbumType.find_by(name: "ootd").id,
+      cover: "http://s6.favim.com/610/150426/beautiful-black-city-clothes-Favim.com-2681716.jpg"
+    )
+    Album.find_or_create_by(
+      user_id: 1,
+      name: "Hair Album #{id}",
+      album_type_id: AlbumType.find_by(name: "hair").id,
+      cover: "https://cdn.evbuc.com/eventlogos/87233631/transitioningtonaturalhair2.jpg"
+    )
+    Album.find_or_create_by(
+      user_id: 1,
+      name: "Lookbook Album #{id}",
+      album_type_id: AlbumType.find_by(name: "complete_lookbook").id,
+      cover: "https://i.ytimg.com/vi/rvPjG_3PQT0/maxresdefault.jpg"
+    )
   end
   if Post.all.length < 30
     30.times do

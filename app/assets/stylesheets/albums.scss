@@ -1,0 +1,9 @@
+.album {
+  & .image-cover {
+    padding:0;
+    overflow:hidden;
+    & img {
+      width:100%;
+    }
+  }
+}
