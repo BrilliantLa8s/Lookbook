@@ -1,0 +1,17 @@
+<%= simple_form_for(@look) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :products %>
+    <%= f.input :howto %>
+    <%= f.input :occasion %>
+    <%= f.input :feedback %>
+    <%= f.association :album %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
